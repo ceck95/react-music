@@ -49,7 +49,7 @@ module.exports = {
       {
           test: /\.(png|jpg)$/,
           exclude: /(node_modules|bower_components)/,
-          loader: 'url-loader?name=images/[name].[ext]&limit=8192'
+          loader: 'url-loader'
       },
 			{
 				test: /\.less$/,
