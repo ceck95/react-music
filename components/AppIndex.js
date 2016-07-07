@@ -6,8 +6,6 @@ import { Link } from 'react-router'
 class AppIndex extends Component{
   render(){
     const img = require('../public/images/button.png')
-    // const img_bg = require('../public/images/bg.jpg')
-    // document.body.style.backgroundImage = "url("+img_bg+")"
     return(
       <Grid fluid>
         <Row className="show-grid">

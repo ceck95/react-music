@@ -22,13 +22,16 @@ class MusicDisplay extends Component{
       })
     }
   }
+  handelClick(){
+    this.props.actionsMusic.resetPlayList(this.props.listmusic)
+  }
   render(){
     return(
       <div>
         <Navbar  styleName='custom-container' inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/"><FontAwesome name='arrow-left'/></Link>
+                <Link to="/" onClick={this.handelClick.bind(this)}><FontAwesome name='arrow-left' /></Link>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>

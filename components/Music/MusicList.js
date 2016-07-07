@@ -10,7 +10,7 @@ class MusicList extends Component{
       <ListGroup componentClass="ul">
       {
         this.props.listmusic.map((music,key)=>{
-          return <MusicItem music={music} key={key} getOneMusic={this.props.getoneAcionsMusic}/>
+          return <MusicItem music={music} key={key} getOneMusic={this.props.getoneAcionsMusic} listmusic={this.props.listmusic} />
         })
       }
       </ListGroup>

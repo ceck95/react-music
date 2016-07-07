@@ -40,10 +40,17 @@ let actions = {
        })
 		}
 	},
-	getOneMusic:function(music){
+	getOneMusic:function(music,list){
 		return{
 			type:'GET_ONE_MUSIC',
-			data:music
+			data:music,
+			list:list
+		}
+	},
+	resetPlayList:function(list){
+		return {
+			type:'RESET_PLAY_LIST',
+			list:list
 		}
 	}
 }

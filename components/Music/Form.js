@@ -32,7 +32,7 @@ class Form extends Component{
      this.setState({
        status_validate:'error'
      })
-   }else if(this.state.textSearch == '.'){
+   }else if(this.state.textSearch == '.' || this.state.textSearch == '?' || this.state.textSearch == '/' || this.state.textSearch == '\\'){
     this.setState({
       status_validate:'error'
     })
