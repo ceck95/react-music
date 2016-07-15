@@ -9,11 +9,11 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 //Config Webpack
-var config = require('./webpack.config.js');
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var compiler = webpack(config);
+// var config = require('./webpack.config.js');
+// var webpack = require('webpack');
+// var webpackDevMiddleware = require('webpack-dev-middleware');
+// var webpackHotMiddleware = require('webpack-hot-middleware');
+// var compiler = webpack(config);
 
 
 var app = express();
@@ -24,8 +24,8 @@ app.set('layout', 'layout');
 app.engine('html', require('hogan-express'));
 app.set('view engine', 'html');
 
-app.use(webpackDevMiddleware(compiler,{noInfo:true,publicPath:config.output.publicPath}));
-app.use(webpackHotMiddleware(compiler));
+// app.use(webpackDevMiddleware(compiler,{noInfo:true,publicPath:config.output.publicPath}));
+// app.use(webpackHotMiddleware(compiler));
 
 app.use(favicon());
 app.use(logger('dev'));
