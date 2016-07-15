@@ -3,7 +3,7 @@ var path  = require('path')
 module.exports = {
 	devtool:'cheap-module-source-map',
 	entry:[
-		'webpack-hot-middleware/client',
+		// 'webpack-hot-middleware/client',
 		'whatwg-fetch',
 		'./container/container.js'
 	],
@@ -13,9 +13,9 @@ module.exports = {
 		publicPath:'/'
 	},
 	plugins:[
-		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin(),
+		// new webpack.optimize.OccurrenceOrderPlugin(),
+		// new webpack.HotModuleReplacementPlugin(),
+		// new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
