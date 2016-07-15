@@ -3,7 +3,7 @@ var path  = require('path')
 module.exports = {
 	devtool:'cheap-module-source-map',
 	entry:[
-		// 'webpack-hot-middleware/client',
+		'webpack-hot-middleware/client',
 		'whatwg-fetch',
 		'./container/container.js'
 	],
@@ -13,9 +13,9 @@ module.exports = {
 		publicPath:'/'
 	},
 	plugins:[
-		// new webpack.optimize.OccurrenceOrderPlugin(),
-		// new webpack.HotModuleReplacementPlugin(),
-		// new webpack.NoErrorsPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
@@ -34,12 +34,12 @@ module.exports = {
 			},
 			{
           test: /\.css$/,
-          exclude: /(s-alert-default.css|s-alert-css-effects|normalize.css|audioplayer.css)/,
+          exclude: /(s-alert-default.css|s-alert-css-effects|normalize.css|audioplayer.css|bootstrap.min.css|font-awesome.css)/,
           loader: 'style-loader!css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]'
       },
       {
           test: /\.css$/,
-          include: /(s-alert-default.css|s-alert-css-effects|normalize.css|audioplayer.css)/,
+          include: /(s-alert-default.css|s-alert-css-effects|normalize.css|audioplayer.css|bootstrap.min.css|font-awesome.css)/,
           loader: 'style-loader!css-loader?sourceMap'
       },
       {
@@ -50,7 +50,9 @@ module.exports = {
 			{
 				test: /\.less$/,
   			loader: 'style!css!less'
-			}
+			},
+			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader"},
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
 		]
 	}
 }
