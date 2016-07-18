@@ -7,8 +7,8 @@ import configureStore from '../store/store'
 import { Provider } from 'react-redux'
 import { Router, Route ,IndexRoute, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'font-awesome/css/font-awesome.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'font-awesome/css/font-awesome.css'
 let initialState = {}
 let store = configureStore(initialState)
 const history = syncHistoryWithStore(hashHistory, store)
